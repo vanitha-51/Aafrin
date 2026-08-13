@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Aafrin Thangamey 💕</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #ffe6f0, #e8d9ff);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 450px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.94);
+            padding: 40px 25px;
+            border-radius: 25px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+            position: relative;
+            z-index: 2;
+        }
+
+        h1 {
+            color: #d63384;
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 16px;
+            margin-bottom: 25px;
+        }
+
+        /* Gift */
+
+        .gift {
+            width: 140px;
+            height: 120px;
+            margin: 25px auto;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .gift:hover {
+            transform: scale(1.08);
+        }
+
+        .box {
+            position: absolute;
+            bottom: 0;
+            left: 5px;
+            width: 130px;
+            height: 80px;
+            background: #ff5c8a;
+            border-radius: 5px;
+        }
+
+        .lid {
+            position: absolute;
+            top: 20px;
+            left: 0;
+            width: 140px;
+            height: 30px;
+            background: #ff3f78;
+            border-radius: 6px;
+            z-index: 3;
+            transition: 0.6s ease;
+        }
+
+        .ribbon {
+            position: absolute;
+            top: 20px;
+            left: 57px;
+            width: 26px;
+            height: 100px;
+            background: #ffd166;
+            z-index: 4;
+        }
+
+        .gift.open .lid {
+            transform: translateY(-60px) rotate(-8deg);
+        }
+
+        .click-text {
+            color: #888;
+            font-size: 14px;
+        }
+
+        /* Message */
+
+        .message {
+            display: none;
+            animation: appear 1s ease forwards;
+        }
+
+        .message.show {
+            display: block;
+        }
+
+        .message h2 {
+            color: #d63384;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .message p {
+            color: #444;
+            line-height: 1.7;
+            font-size: 16px;
+        }
+
+        .heart {
+            font-size: 40px;
+            margin-top: 20px;
+            animation: heartbeat 1s infinite;
+        }
+
+        .small {
+            margin-top: 20px;
+            color: #999;
+            font-size: 13px;
+        }
+
+        /* Floating hearts */
+
+        .floating-heart {
+            position: absolute;
+            bottom: -50px;
+            font-size: 25px;
+            animation: float 5s linear infinite;
+            opacity: 0.7;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-110vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes appear {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.2);
+            }
+        }
+
+        /* Surprise text */
+
+        .surprise {
+            color: #d63384;
+            font-size: 13px;
+            margin-top: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Floating hearts -->
+
+    <div class="floating-heart" style="left: 8%; animation-delay: 0s;">💗</div>
+    <div class="floating-heart" style="left: 25%; animation-delay: 2s;">💕</div>
+    <div class="floating-heart" style="left: 50%; animation-delay: 1s;">💖</div>
+    <div class="floating-heart" style="left: 75%; animation-delay: 3s;">💗</div>
+    <div class="floating-heart" style="left: 90%; animation-delay: 1.5s;">💞</div>
+
+
+    <div class="container">
+
+        <!-- START SCREEN -->
+
+        <div id="intro">
+
+            <h1>Aafrin Thangamey 💕</h1>
+
+            <p class="subtitle">
+                Unakku oru chinna surprise irukku... 👀🎁
+            </p>
+
+            <div class="gift" id="gift">
+
+                <div class="lid"></div>
+
+                <div class="box"></div>
+
+                <div class="ribbon"></div>
+
+            </div>
+
+            <p class="click-text">
+                🎁 Tap the gift
+            </p>
+
+            <p class="surprise">
+                Don't be scared 😂❤️
+            </p>
+
+        </div>
+
+
+        <!-- THANK YOU MESSAGE -->
+
+        <div class="message" id="message">
+
+            <h2>Thank You! 🥹💖</h2>
+
+            <p>
+
+                I honestly didn't expect this at all. 😭
+
+                <br><br>
+
+                You surprised me so much with the gift.
+                I know I didn't react properly at that moment,
+                but trust me... I was genuinely so happy. 🥹
+
+                <br><br>
+
+                Sorry for not saying a proper thank you then. 😭
+
+                <br><br>
+
+                But now I really want to say it...
+
+                <br><br>
+
+                <strong>
+                    THANK YOU SO MUCH! 🫶❤️
+                </strong>
+
+                <br><br>
+
+                The gift is special,
+                but the thought behind it is even more special. 💗
+
+            </p>
+
+            <div class="heart">
+                ❤️
+            </div>
+
+            <p class="small">
+                Aafrin Thangamey, you're really sweet. 🥹💕
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        const gift = document.getElementById("gift");
+        const message = document.getElementById("message");
+        const intro = document.getElementById("intro");
+
+        gift.addEventListener("click", function () {
+
+            // Open gift
+            gift.classList.add("open");
+
+            // Show message after animation
+            setTimeout(function () {
+
+                intro.style.display = "none";
+
+                message.classList.add("show");
+
+            }, 700);
+
+        });
+
+    </script>
+
+</body>
+  </html>
