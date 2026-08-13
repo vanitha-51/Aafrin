@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>A Little Thank You 💖</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #ffe6f0, #e8d9ff);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 450px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px 25px;
+            border-radius: 25px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            position: relative;
+            z-index: 2;
+        }
+
+        h1 {
+            color: #d63384;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        /* Gift */
+        .gift {
+            width: 130px;
+            height: 110px;
+            margin: 30px auto;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .gift:hover {
+            transform: scale(1.08);
+        }
+
+        .box {
+            position: absolute;
+            bottom: 0;
+            width: 130px;
+            height: 80px;
+            background: #ff5c8a;
+            border-radius: 5px;
+        }
+
+        .lid {
+            position: absolute;
+            top: 15px;
+            left: -7px;
+            width: 144px;
+            height: 30px;
+            background: #ff3f78;
+            border-radius: 6px;
+            transition: 0.6s;
+        }
+
+        .ribbon {
+            position: absolute;
+            left: 52px;
+            width: 25px;
+            height: 110px;
+            background: #ffd166;
+            z-index: 2;
+        }
+
+        .gift.open .lid {
+            transform: translateY(-55px) rotate(-8deg);
+        }
+
+        .click-text {
+            color: #888;
+            font-size: 14px;
+        }
+
+        /* Hidden message */
+        .message {
+            display: none;
+            animation: appear 1s ease forwards;
+        }
+
+        .message.show {
+            display: block;
+        }
+
+        .message h2 {
+            color: #d63384;
+            margin-bottom: 18px;
+        }
+
+        .message p {
+            color: #444;
+            line-height: 1.7;
+            font-size: 16px;
+        }
+
+        .heart {
+            font-size: 35px;
+            margin-top: 15px;
+        }
+
+        @keyframes appear {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Floating hearts */
+        .floating-heart {
+            position: absolute;
+            bottom: -50px;
+            font-size: 25px;
+            animation: float 5s linear infinite;
+            opacity: 0.7;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-110vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .small {
+            margin-top: 20px;
+            color: #999;
+            font-size: 13px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Floating hearts -->
+    <div class="floating-heart" style="left:10%; animation-delay:0s;">💗</div>
+    <div class="floating-heart" style="left:30%; animation-delay:2s;">💕</div>
+    <div class="floating-heart" style="left:55%; animation-delay:1s;">💖</div>
+    <div class="floating-heart" style="left:80%; animation-delay:3s;">💗</div>
+
+    <div class="container">
+
+        <div id="intro">
+
+            <h1>Hey You! 👀</h1>
+
+            <p class="subtitle">
+                I have a tiny message for you...
+            </p>
+
+            <div class="gift" id="gift">
+
+                <div class="lid"></div>
+
+                <div class="box"></div>
+
+                <div class="ribbon"></div>
+
+            </div>
+
+            <p class="click-text">
+                🎁 Tap the gift
+            </p>
+
+        </div>
+
+
+        <!-- Thank You Message -->
+
+        <div class="message" id="message">
+
+            <h2>Thank You! 🥹💖</h2>
+
+            <p>
+                I honestly didn't expect this at all. 😭
+                <br><br>
+
+                You surprised me so much with the gift.
+                I know I didn't react properly at that moment,
+                but trust me... I was genuinely so happy. 🥹
+                <br><br>
+
+                Sorry for not saying a proper thank you then. 😭
+                <br><br>
+
+                But now I really want to say it...
+                <br>
+
+                <strong>THANK YOU SO MUCH! 🫶❤️</strong>
+                <br><br>
+
+                The gift is special,
+                but the thought behind it is even more special. 💗
+            </p>
+
+            <div class="heart">
+                ❤️
+            </div>
+
+            <p class="small">
+                — From someone who definitely didn't expect that surprise 😭😂
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        const gift = document.getElementById("gift");
+        const message = document.getElementById("message");
+        const intro = document.getElementById("intro");
+
+        gift.addEventListener("click", function () {
+
+            gift.classList.add("open");
+
+            setTimeout(function () {
+
+                intro.style.display = "none";
+
+                message.classList.add("show");
+
+            }, 700);
+
+        });
+
+    </script>
+
+</body>
+</html>
